@@ -1,0 +1,295 @@
+.landing-page {
+  --landing-overlay-sand-mist: oklch(0.9692 0.0162 95.21 / 0.5);
+  --landing-headline-ink: oklch(0.4222 0.0756 262.54);
+  --landing-cta-banner-fill: oklch(0.9695 0.0149 94.2);
+  --landing-cta-banner-stroke: oklch(0.5137 0.1133 277.43);
+
+  position: relative;
+  overflow: hidden;
+  /* background-image: url("/illustrations/backgroundHero.png"); */
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.landing-page__color-overlay,
+.landing-page__noise-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.landing-page__color-overlay {
+  background-color: var(--landing-overlay-sand-mist);
+}
+
+.landing-page__noise-overlay {
+  background-image: url("/illustrations/noise.png");
+  background-position: center;
+  background-repeat: repeat;
+  opacity: 0.04;
+}
+
+.landing-page__logo {
+  position: absolute;
+  left: 50%;
+  height: auto;
+  max-width: 100%;
+  z-index: 2;
+}
+
+.landing-page__headline {
+  position: absolute;
+  left: 50%;
+  z-index: 2;
+  margin: 0;
+  color: var(--landing-headline-ink);
+  text-align: center;
+  font-family: "PP Editorial New", serif;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.landing-page__headline-part,
+.landing-page__headline-part-italic {
+  color: var(--landing-headline-ink);
+  font-family: "PP Editorial New", serif;
+  font-weight: 400;
+}
+
+.landing-page__headline-part {
+  font-style: normal;
+}
+
+.landing-page__headline-part-italic {
+  font-style: italic;
+}
+
+.cta-email {
+  position: absolute;
+  z-index: 2;
+}
+
+.cta-email__field-wrap {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border: 0;
+  border-radius: 0.125rem;
+  outline: 0.3125rem solid var(--landing-cta-banner-stroke);
+  outline-offset: 0;
+  background-color: var(--landing-cta-banner-fill);
+}
+
+.cta-email__input {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  padding: 0 16px;
+  background: transparent;
+  color: var(--landing-headline-ink);
+  text-align: center;
+  font-family: "PP Editorial New", serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: var(--landing-cta-height);
+}
+
+.cta-email__input:focus {
+  outline: none;
+}
+
+.cta-email__input::placeholder {
+  color: color-mix(in oklch, var(--landing-headline-ink) 70%, white);
+}
+
+.cta-email__noise {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background-image: url("/illustrations/noise.png");
+  background-position: center;
+  background-repeat: repeat;
+  opacity: 0.04;
+}
+
+.cta-email__ornament {
+  position: absolute;
+  z-index: 1;
+  top: 30px;
+  width: 86px;
+  height: 40px;
+  pointer-events: none;
+}
+
+.cta-email__ornament--left {
+  right: calc(100% - 12px);
+  transform: scaleX(-1);
+}
+
+.cta-email__ornament--right {
+  left: calc(100% - 12px);
+}
+
+.cta-button-anchor {
+  position: absolute;
+  z-index: 2;
+}
+
+.cta-button {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.cta-secondary-button {
+  position: absolute;
+  z-index: 2;
+}
+
+/* ── Section title ─────────────────────────────────── */
+
+.section-title {
+  color: var(--landing-headline-ink, oklch(0.4222 0.0756 262.54));
+  font-family: "PP Editorial New", serif;
+  font-weight: 400;
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* ── FAQ ───────────────────────────────────────────── */
+
+.faq-wrapper {
+  padding: 4rem 1.5rem 3rem;
+  background-color: #FBFAF4;
+  background-size: cover;
+  background-position: center;
+}
+
+.faq-columns {
+  display: flex;
+  gap: 2rem;
+  max-width: 64rem;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.faq-column {
+  flex: 1;
+  max-width: 30rem;
+}
+
+.faq-item {
+  border-bottom: 3px solid oklch(0.5137 0.1133 277.43 / 0.3);
+  padding-bottom: 0.25rem;
+}
+
+.faq-trigger {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 0.5rem;
+  border: 0;
+  background: transparent;
+  color: oklch(0.4222 0.0756 262.54);
+  font-family: "PP Editorial New", serif;
+  font-size: 1.15rem;
+  font-weight: 400;
+  text-align: left;
+  cursor: pointer;
+  transition: color 0.15s;
+}
+
+.faq-trigger:hover {
+  text-decoration: underline;
+}
+
+.faq-chevron {
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.faq-chevron--open {
+  transform: rotate(180deg);
+}
+
+.faq-content {
+  max-height: 0;
+  overflow: hidden;
+  transition:
+    max-height 0.3s ease,
+    opacity 0.3s ease;
+  opacity: 0;
+}
+
+.faq-content--open {
+  max-height: 12rem;
+  opacity: 1;
+}
+
+.faq-answer {
+  padding: 0 0.5rem 0.75rem;
+  color: oklch(0.4222 0.0756 262.54 / 0.85);
+  font-family: "PP Editorial New", serif;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.faq-help-text {
+  text-align: center;
+  margin-top: 2rem;
+  color: oklch(0.4222 0.0756 262.54);
+  font-family: "PP Editorial New", serif;
+  font-size: 1.1rem;
+}
+
+/* ── Footer ────────────────────────────────────────── */
+
+.landing-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.75rem 2rem;
+  background-color: #6379A5;
+}
+
+.landing-footer__icons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.landing-footer__icon-link {
+  color: oklch(0.9695 0.0149 94.2 / 0.7);
+  transition: color 0.15s;
+}
+
+.landing-footer__icon-link:hover {
+  color: oklch(0.9695 0.0149 94.2);
+}
+
+.landing-footer__title {
+  color: oklch(0.9695 0.0149 94.2);
+  font-family: "PP Editorial New", serif;
+  font-style: italic;
+  font-size: 2.5rem;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.landing-footer__subtitle {
+  color: oklch(0.9695 0.0149 94.2 / 0.7);
+  font-family: "PP Editorial New", serif;
+  font-size: 1.1rem;
+  margin-top: 0.25rem;
+}
+

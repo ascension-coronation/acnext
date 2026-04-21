@@ -1,0 +1,82 @@
+@media (max-width: 1024px) {
+  .landing-page {
+    --landing-headline-size: 32px;
+    --landing-headline-line-height: 36px;
+    --landing-cta-height: 2.5rem;
+    background-position: left center;
+  }
+
+  .landing-page__logo {
+    top: 5.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 3.02rem);
+    height: auto;
+    aspect-ratio: 191 / 57;
+  }
+
+  .landing-page__headline {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 39.6875rem;
+    max-width: 92vw;
+    color: #374D77;
+    font-size: 3.375rem;
+    line-height: 3.125rem;
+  }
+
+  .landing-page__headline-part,
+  .landing-page__headline-part-italic {
+    color: #374D77;
+    font-size: 3.375rem;
+    line-height: 3.125rem;
+  }
+
+  .cta-email {
+    top: auto;
+    bottom: calc(1.88rem + 2.25rem + 1.56rem);
+    left: 1.56rem;
+    right: 1.56rem;
+    height: 2.6rem;
+    width: auto;
+    transform: none;
+  }
+
+  .cta-email__ornament {
+    display: none;
+  }
+
+  .ui-button-cta {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .cta-button-anchor {
+    top: auto;
+    bottom: 1.88rem;
+    left: 1.56rem;
+    right: 1.56rem;
+    width: auto;
+    transform: none;
+  }
+
+  .cta-secondary-button {
+    top: 1.81rem;
+    right: 1.81rem;
+  }
+
+  .faq-columns {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .faq-column {
+    width: 100%;
+  }
+
+  .section-title {
+    font-size: 2.25rem;
+  }
+
+}
