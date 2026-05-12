@@ -135,25 +135,27 @@ export default function Landing() {
       <Toaster />
       <main className="landing-page pb-50 h-screen">
       {/* background image parallax */}
-      <ParallaxProvider>
-        <Parallax speed={-20}>
-          <img src="/illustrations/sky_bg/backdrop.avif" className="w-screen h-screen" alt="" />
-        </Parallax>
-        <Parallax speed={-10}>
-          <img src="/illustrations/sky_bg/cloud2.avif" className="absolute bottom-0 w-screen h-screen" alt="" />
-          <img src="/illustrations/sky_bg/cloud5.avif" className="absolute bottom-0 w-screen h-screen" alt="" /> 
-        </Parallax>
-        <Parallax speed={-7}>
-          <img src="/illustrations/sky_bg/island2.avif" className="absolute bottom-0 w-screen h-screen" alt="" />
-        </Parallax>
-        <Parallax speed={10}>
-          <img src="/illustrations/sky_bg/cloud3.avif" className="absolute bottom-0 w-screen h-screen" alt="" />
-          <img src="/illustrations/sky_bg/cloud4.avif" className="absolute bottom-0 w-screen h-screen" alt=""/>
-        </Parallax>
-        <Parallax speed={5}>
-          <img src="/illustrations/sky_bg/island1.avif" className="absolute bottom-0 w-screen h-screen" alt="" />
-        </Parallax>
-      </ParallaxProvider>
+        <div className="relative w-screen h-screen overflow-hidden">
+          <ParallaxProvider>
+            <Parallax speed={-20} className="absolute inset-0">
+              <img src="/illustrations/sky_bg/backdrop.avif" className="w-screen h-screen" alt="" />
+            </Parallax>
+            <Parallax speed={-10} className="absolute inset-0">
+              <img src="/illustrations/sky_bg/cloud2.avif" className="absolute bottom-0 w-full h-full object-cover" alt="" />
+              <img src="/illustrations/sky_bg/cloud5.avif" className="absolute bottom-0 w-full h-full object-cover" alt="" /> 
+            </Parallax>
+            <Parallax speed={-7} className="absolute inset-0">
+              <img src="/illustrations/sky_bg/island2.avif" className="absolute bottom-0 w-full h-full object-cover" alt="" />
+            </Parallax>
+            <Parallax speed={10} className="absolute inset-0">
+              <img src="/illustrations/sky_bg/cloud3.avif" className="absolute bottom-0 w-full h-full object-cover" alt="" />
+              <img src="/illustrations/sky_bg/cloud4.avif" className="w-screen h-screen" alt=""/>
+            </Parallax>
+            <Parallax speed={5} className="absolute inset-0">
+              <img src="/illustrations/sky_bg/island1.avif" className="absolute bottom-0 w-full h-full object-cover" alt="" />
+            </Parallax>
+          </ParallaxProvider>
+        </div>      
         <div className="flex flex-col">
           <Image
             className="landing-page__logo"
