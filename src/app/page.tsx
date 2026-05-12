@@ -4,6 +4,7 @@ import { FormEvent, useState } from "react"
 import Image from "next/image"
 import posthog from "posthog-js"
 import { toast, Toaster } from "sonner"
+import { ParallaxProvider, Parallax } from 'react-scroll-parallax';
 
 import { Button } from "@/components/ui/button"
 import { SpinnerCustom } from "@/components/ui/spinner"
@@ -120,7 +121,7 @@ export default function Landing() {
         setError(messages[0] ?? null)
       } else {
         toast.success("You're on the list!")
-        ;(e.target as HTMLFormElement).reset()
+          ; (e.target as HTMLFormElement).reset()
       }
     } catch {
       toast.error("Something went wrong. Please try again.")
@@ -133,7 +134,26 @@ export default function Landing() {
     <>
       <Toaster />
       <main className="landing-page pb-50 h-screen">
-        <img src="/illustrations/backgroundHero.png" className="w-full max-h-screen"/>
+      {/* background image parallax */}
+      <ParallaxProvider>
+        <Parallax speed={-20}>
+          <img src="/illustrations/sky_bg/backdrop.avif" className="w-screen h-screen" alt="" />
+        </Parallax>
+        <Parallax speed={-10}>
+          <img src="/illustrations/sky_bg/cloud2.avif" className="absolute bottom-0 w-screen h-screen" alt="" />
+          <img src="/illustrations/sky_bg/cloud5.avif" className="absolute bottom-0 w-screen h-screen" alt="" /> 
+        </Parallax>
+        <Parallax speed={-7}>
+          <img src="/illustrations/sky_bg/island2.avif" className="absolute bottom-0 w-screen h-screen" alt="" />
+        </Parallax>
+        <Parallax speed={10}>
+          <img src="/illustrations/sky_bg/cloud3.avif" className="absolute bottom-0 w-screen h-screen" alt="" />
+          <img src="/illustrations/sky_bg/cloud4.avif" className="absolute bottom-0 w-screen h-screen" alt=""/>
+        </Parallax>
+        <Parallax speed={5}>
+          <img src="/illustrations/sky_bg/island1.avif" className="absolute bottom-0 w-screen h-screen" alt="" />
+        </Parallax>
+      </ParallaxProvider>
         <div className="flex flex-col">
           <Image
             className="landing-page__logo"
@@ -194,7 +214,7 @@ export default function Landing() {
                 type="submit"
                 disabled={processing}
               >
-                {processing ? <SpinnerCustom /> : "Await your Ascension →"}
+                {processing ? <SpinnerCustom /> : "RSVP →"}
               </Button>
             </div>
           </form>
@@ -202,7 +222,7 @@ export default function Landing() {
           <div className="landing-page__noise-overlay" aria-hidden="true" />
         </div>
       </main>
-      
+
       <section className="faq-wrapper">
 
         <h2 className="section-title italic">FAQ</h2>
