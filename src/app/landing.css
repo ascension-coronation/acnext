@@ -31,6 +31,7 @@
 
 .landing-page__color-overlay {
   background-color: var(--landing-overlay-sand-mist);
+  background-image: linear-gradient(transparent 75%, var(--color-white-off));
 }
 
 .landing-page__noise-overlay {
@@ -177,7 +178,7 @@
 /* how this works */
 
 .how-this-works-wrapper {
-  padding: 4rem 1.5rem 3rem;
+  padding: 4rem 3rem 3rem;
   background-color: #fbfaf4;
   background-size: cover;
   background-position: center;
@@ -187,7 +188,9 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  gap: 2rem;
+  gap: 1.5rem;
+  max-width: 1280px;
+  justify-self: center;
   justify-content: center;
 }
 
