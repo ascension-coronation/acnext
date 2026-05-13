@@ -194,14 +194,6 @@
   justify-content: center;
 }
 
-.how-this-works-item {
-  text-align: center;
-  padding: 2rem;
-  outline: 2px solid var(--color-navy);
-  border-radius: 8px;
-  box-shadow: 0px 4px 0px var(--color-navy);
-  transition-duration: 200ms;
-}
 
 .htw-purple {
   background-image:
@@ -237,17 +229,25 @@
   background-blend-mode: normal, soft-light;
 }
 
+.how-this-works-item {
+  text-align: center;
+  padding: clamp(0.5rem, 0.75vw, 1rem);
+  outline: 2px solid var(--color-navy);
+  border-radius: 8px;
+  box-shadow: 0px 4px 0px var(--color-navy);
+  transition-duration: 200ms;
+}
+
 .how-this-works-item:hover {
-  padding-top: 2.5rem;
+  padding-top: 1rem;
   margin-top: 0.5rem;
   box-shadow: 0px 6px 0px var(--color-navy);
 }
 
 .how-this-works-title {
   font-family: "PP Editorial New", serif;
-  margin: 0rem 0.5rem 1.5rem;
-  font-size: 32px;
-  font-style: bold;
+  margin: 0.5rem 0.5rem 1.5rem;
+  font-size: 28px;
   color: var(--color-navy);
   transition-duration: 200ms;
 }
@@ -259,7 +259,7 @@
 
 .how-this-works-image {
   transition-duration: 200ms;
-  width: 75%;
+  max-width: 75%;
   place-self: center;
 }
 
@@ -269,7 +269,7 @@
 
 .how-this-works-caption {
   font-family: "PP Editorial New", serif;
-  margin: 1.5rem 0.5rem 0rem;
+  margin: 1.5rem 0.5rem 0.5rem;
   color: var(--color-purple-dark);
   font-size: 24px;
 }
