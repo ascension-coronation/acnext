@@ -1,17 +1,56 @@
-"use client"
+"use client";
 
-import { FormEvent, useState } from "react"
-import Image from "next/image"
-import posthog from "posthog-js"
-import { toast, Toaster } from "sonner"
-import { ParallaxProvider, Parallax } from 'react-scroll-parallax';
+import { FormEvent, useState } from "react";
+import Image from "next/image";
+import posthog from "posthog-js";
+import { toast, Toaster } from "sonner";
+import { ParallaxProvider, Parallax } from "react-scroll-parallax";
 
-import { Button } from "@/components/ui/button"
-import { SpinnerCustom } from "@/components/ui/spinner"
+import { Button } from "@/components/ui/button";
+import { SpinnerCustom } from "@/components/ui/spinner";
 
-import "./landing.css"
-import "./landing.desktop.css"
-import "./landing.mobile.css"
+import "./landing.css";
+import "./landing.desktop.css";
+import "./landing.mobile.css";
+
+const howThisWorksItems = [
+  {
+    id: 1,
+    title: "sign up",
+    caption: "sdfjdjfd",
+    src: "/illustrations/squid.png",
+  },
+  {
+    id: 2,
+    title: "design/draw!",
+    caption: "sdfjdjfd",
+    src: "/illustrations/squid.png",
+  },
+  {
+    id: 3,
+    title: "code it up",
+    caption: "sdfjdjfd",
+    src: "/illustrations/squid.png",
+  },
+  {
+    id: 4,
+    title: "track your time",
+    caption: "sdfjdjfd",
+    src: "/illustrations/squid.png",
+  },
+  {
+    id: 5,
+    title: "publish your project!",
+    caption: "sdfjdjfd",
+    src: "/illustrations/squid.png",
+  },
+  {
+    id: 6,
+    title: "SUBMIT (for prizes!)",
+    caption: "sdfjdjfd",
+    src: "/illustrations/squid.png",
+  },
+];
 
 const faqItems1 = [
   {
@@ -28,7 +67,7 @@ const faqItems1 = [
     question: "Can you add x to the shop?",
     answer: "Ask in #ascension in slack!",
   },
-]
+];
 
 const faqItems2 = [
   {
@@ -36,24 +75,55 @@ const faqItems2 = [
     answer: "Nope, sorry :p",
   },
   {
-    question: 'idk',
-    answer:
-      "sfdakl;auioahdsouiphdsfagpiofdgoiadfvp[oksosdfgokfdgs].",
+    question: "idk",
+    answer: "sfdakl;auioahdsouiphdsfagpiofdgoiadfvp[oksosdfgokfdgs].",
   },
   {
     question: "Does my project have to be open source?",
     answer: "Yep! It needs to be open source & easily usable by anybody.",
   },
-]
+];
+
+function HowThisWorksItem({
+  id,
+  title,
+  caption,
+  src,
+}: {
+  id: string;
+  title: string;
+  caption: string;
+  src: string;
+}) {
+  return (
+    <div className={`how-this-works-item how-this-works-item-noise ${
+      [
+        "htw-blue",
+        "htw-purple",        
+        "htw-yellow",
+        "htw-blue",
+        "htw-yellow",        
+        "htw-blue",
+        "htw-purple",      
+      ][Number(id)]
+    }`}>
+      <h3 className="how-this-works-title">
+        {id}. {title}
+      </h3>
+      <img src={src} alt="" className="how-this-works-image" />
+      <p className="how-this-works-caption">{caption}</p>
+    </div>
+  );
+}
 
 function AccordionItem({
   question,
   answer,
 }: {
-  question: string
-  answer: string
+  question: string;
+  answer: string;
 }) {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
   return (
     <div className="faq-item">
       <button
@@ -80,53 +150,53 @@ function AccordionItem({
         <p className="faq-answer">{answer}</p>
       </div>
     </div>
-  )
+  );
 }
 
 export default function Landing() {
-  const [processing, setProcessing] = useState(false)
-  const [error, setError] = useState<string | null>(null)
+  const [processing, setProcessing] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault()
-    setError(null)
-    setProcessing(true)
+    e.preventDefault();
+    setError(null);
+    setProcessing(true);
 
-    const formData = new FormData(e.currentTarget)
-    const email = formData.get("email") as string | null
+    const formData = new FormData(e.currentTarget);
+    const email = formData.get("email") as string | null;
 
-    posthog.capture("rsvp_form_submitted", { email })
-    if (email) posthog.identify(email, { email })
+    posthog.capture("rsvp_form_submitted", { email });
+    if (email) posthog.identify(email, { email });
 
     try {
       const res = await fetch("/api/rsvp", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email }),
-      })
+      });
 
       if (!res.ok) {
-        const data = await res.json()
+        const data = await res.json();
         const messages = Object.values(data.errors ?? {})
           .flat()
-          .filter(Boolean) as string[]
+          .filter(Boolean) as string[];
 
         if (messages.length === 0) {
-          toast.error("Something went wrong. Please try again.")
+          toast.error("Something went wrong. Please try again.");
         } else {
           for (const message of new Set(messages)) {
-            toast.error(message)
+            toast.error(message);
           }
         }
-        setError(messages[0] ?? null)
+        setError(messages[0] ?? null);
       } else {
-        toast.success("You're on the list!")
-          ; (e.target as HTMLFormElement).reset()
+        toast.success("You're on the list!");
+        (e.target as HTMLFormElement).reset();
       }
     } catch {
-      toast.error("Something went wrong. Please try again.")
+      toast.error("Something went wrong. Please try again.");
     } finally {
-      setProcessing(false)
+      setProcessing(false);
     }
   }
 
@@ -134,28 +204,56 @@ export default function Landing() {
     <>
       <Toaster />
       <main className="landing-page pb-50 h-screen">
-      {/* background image parallax */}
+        {/* background image parallax */}
         <div className="relative w-screen h-screen overflow-hidden">
           <ParallaxProvider>
             <Parallax speed={-20} className="absolute inset-0">
-              <img src="/illustrations/sky_bg/backdrop.avif" className="w-screen h-screen" alt="" />
+              <img
+                src="/illustrations/sky_bg/backdrop.avif"
+                className="w-screen h-screen"
+                alt=""
+              />
             </Parallax>
             <Parallax speed={-10} className="absolute inset-0">
-              <img src="/illustrations/sky_bg/cloud2.avif" className="absolute bottom-0 w-full h-full object-cover" alt="" />
-              <img src="/illustrations/sky_bg/cloud5.avif" className="absolute bottom-0 w-full h-full object-cover" alt="" /> 
+              <img
+                src="/illustrations/sky_bg/cloud2.avif"
+                className="absolute bottom-0 w-full h-full object-cover"
+                alt=""
+              />
+              <img
+                src="/illustrations/sky_bg/cloud5.avif"
+                className="absolute bottom-0 w-full h-full object-cover"
+                alt=""
+              />
             </Parallax>
             <Parallax speed={-7} className="absolute inset-0">
-              <img src="/illustrations/sky_bg/island2.avif" className="absolute bottom-0 w-full h-full object-cover" alt="" />
+              <img
+                src="/illustrations/sky_bg/island2.avif"
+                className="absolute bottom-0 w-full h-full object-cover"
+                alt=""
+              />
             </Parallax>
             <Parallax speed={10} className="absolute inset-0">
-              <img src="/illustrations/sky_bg/cloud3.avif" className="absolute bottom-0 w-full h-full object-cover" alt="" />
-              <img src="/illustrations/sky_bg/cloud4.avif" className="w-screen h-screen" alt=""/>
+              <img
+                src="/illustrations/sky_bg/cloud3.avif"
+                className="absolute bottom-0 w-full h-full object-cover"
+                alt=""
+              />
+              <img
+                src="/illustrations/sky_bg/cloud4.avif"
+                className="w-screen h-screen"
+                alt=""
+              />
             </Parallax>
             <Parallax speed={5} className="absolute inset-0">
-              <img src="/illustrations/sky_bg/island1.avif" className="absolute bottom-0 w-full h-full object-cover" alt="" />
+              <img
+                src="/illustrations/sky_bg/island1.avif"
+                className="absolute bottom-0 w-full h-full object-cover"
+                alt=""
+              />
             </Parallax>
           </ParallaxProvider>
-        </div>      
+        </div>
         <div className="flex flex-col">
           <Image
             className="landing-page__logo"
@@ -225,8 +323,22 @@ export default function Landing() {
         </div>
       </main>
 
-      <section className="faq-wrapper">
+      <section className="how-this-works-wrapper">
+        <h2 className="section-title">How does this work?</h2>
+        <div className="how-this-works">
+          {howThisWorksItems.map((item) => (
+            <HowThisWorksItem
+              key={item.id}
+              id={String(item.id)}
+              title={item.title}
+              caption={item.caption}
+              src={item.src}
+            />
+          ))}
+        </div>
+      </section>
 
+      <section className="faq-wrapper">
         <h2 className="section-title italic">FAQ</h2>
         <div className="faq-columns">
           <div className="faq-column">
@@ -241,16 +353,19 @@ export default function Landing() {
           </div>
         </div>
         <p className="faq-help-text">
-          Still confused? Ask in the #ascension channel on slack and we can help you out!
+          Still confused? Ask in the #ascension channel on slack and we can help
+          you out!
         </p>
       </section>
 
       <footer className="landing-footer">
         <div>
           <div className="landing-footer__title">ASCENSION</div>
-          <div className="landing-footer__subtitle">Made with ❤️ by hackclubbers like you</div>
+          <div className="landing-footer__subtitle">
+            Made with ❤️ by hackclubbers like you
+          </div>
         </div>
       </footer>
     </>
-  )
+  );
 }

@@ -1,3 +1,13 @@
+:root {
+  --color-purple: #928ddf;
+  --color-purple-light: #d9cee9;
+  --color-blue-pale: #c2e8f3;
+  --color-white-off: #f8f5e9;
+  --color-yellow: #f9eabf;
+  --color-navy: #0a3474;
+  --color-purple-dark: #585fa7;
+}
+
 .landing-page {
   --landing-overlay-sand-mist: oklch(0.9692 0.0162 95.21 / 0.5);
   --landing-headline-ink: oklch(0.4222 0.0756 262.54);
@@ -164,11 +174,108 @@
   margin-bottom: 2rem;
 }
 
+/* how this works */
+
+.how-this-works-wrapper {
+  padding: 4rem 1.5rem 3rem;
+  background-color: #fbfaf4;
+  background-size: cover;
+  background-position: center;
+}
+
+.how-this-works {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.how-this-works-item {
+  text-align: center;
+  padding: 2rem;
+  outline: 2px solid var(--color-navy);
+  border-radius: 8px;
+  box-shadow: 0px 4px 0px var(--color-navy);
+  transition-duration: 200ms;
+}
+
+.htw-purple {
+  background-image:
+    linear-gradient(
+      color-mix(in srgb, var(--color-purple-light) 70%, transparent),
+      color-mix(in srgb, var(--color-white-off) 60%, transparent)     
+    ),
+    url("/illustrations/royalTexture.png");
+  background-repeat: no-repeat, repeat;
+  background-position: center, center;
+  background-blend-mode: normal, soft-light;
+}
+.htw-blue {
+  background-image:
+    linear-gradient(
+      color-mix(in srgb, var(--color-blue-pale) 70%, transparent),
+      color-mix(in srgb, var(--color-white-off) 60%, transparent)     
+    ),
+    url("/illustrations/royalTexture.png");
+  background-repeat: no-repeat, repeat;
+  background-position: center, center;
+  background-blend-mode: normal, soft-light;
+}
+.htw-yellow {
+  background-image:
+    linear-gradient(
+      color-mix(in srgb, var(--color-yellow) 70%, transparent),
+      color-mix(in srgb, var(--color-white-off) 60%, transparent)     
+    ),
+    url("/illustrations/royalTexture.png");
+  background-repeat: no-repeat, repeat;
+  background-position: center, center;
+  background-blend-mode: normal, soft-light;
+}
+
+.how-this-works-item:hover {
+  padding-top: 2.5rem;
+  margin-top: 0.5rem;
+  box-shadow: 0px 6px 0px var(--color-navy);
+}
+
+.how-this-works-title {
+  font-family: "PP Editorial New", serif;
+  margin: 0rem 0.5rem 1.5rem;
+  font-size: 32px;
+  font-style: bold;
+  color: var(--color-navy);
+  transition-duration: 200ms;
+}
+
+.how-this-works-title:hover {
+  text-decoration: underline;
+  transform: scale(1.05, 1.05);
+}
+
+.how-this-works-image {
+  transition-duration: 200ms;
+  width: 75%;
+  place-self: center;
+}
+
+.how-this-works-image:hover {
+  transform: scale(1.05, 1.05);
+}
+
+.how-this-works-caption {
+  font-family: "PP Editorial New", serif;
+  margin: 1.5rem 0.5rem 0rem;
+  color: var(--color-purple-dark);
+  font-size: 24px;
+}
+
 /* ── FAQ ───────────────────────────────────────────── */
 
 .faq-wrapper {
   padding: 4rem 1.5rem 3rem;
-  background-color: #FBFAF4;
+  background-color: #fbfaf4;
   background-size: cover;
   background-position: center;
 }
@@ -259,7 +366,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 1.75rem 2rem;
-  background-color: #6379A5;
+  background-color: #6379a5;
 }
 
 .landing-footer__icons {
@@ -292,4 +399,3 @@
   font-size: 1.1rem;
   margin-top: 0.25rem;
 }
-
