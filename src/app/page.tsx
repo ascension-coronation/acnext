@@ -9,7 +9,9 @@ import { ParallaxProvider, Parallax } from 'react-scroll-parallax';
 import { Button } from "@/components/ui/button"
 import { SpinnerCustom } from "@/components/ui/spinner"
 
+// @ts-ignore
 import "./landing.css"
+// @ts-ignore
 import "./landing.desktop.css"
 import "./landing.mobile.css"
 
