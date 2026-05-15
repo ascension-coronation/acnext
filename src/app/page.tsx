@@ -338,6 +338,10 @@ export default function Landing() {
         </div>
       </section>
 
+      <section className = "prize-wrapper">
+        <h2 className = "section-title italic"> Prizes</h2>
+      </section>
+
       <section className="faq-wrapper">
         <h2 className="section-title italic">FAQ</h2>
         <div className="faq-columns">
