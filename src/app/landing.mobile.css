@@ -66,6 +66,10 @@
     right: 1.81rem;
   }
 
+  .how-this-works-item {
+      width: 100%;
+  }
+
   .faq-columns {
     flex-direction: column;
     align-items: center;
