@@ -24,7 +24,7 @@ const howThisWorksItems = [
   {
     id: 2,
     title: "design/draw!",
-    caption: "Illustration? 3D modeling? vector art? wireframes? just make some cool art for your project!",
+    caption: "Think of your project... try illustration? 3D modeling? wireframes? Learn to make some cool art for your project!",
     src: "/illustrations/squid.png",
   },
   {
@@ -42,7 +42,7 @@ const howThisWorksItems = [
   {
     id: 5,
     title: "publish your project!",
-    caption: "let anyone on the internet see your beautiful creation... don't know how? we have guides :D", 
+    caption: "Let anyone on the internet see your beautiful creation... (with Vercel, GitHub Pages, itch.io, etc!)", 
     src: "/illustrations/squid.png", 
   },
   {
@@ -204,7 +204,7 @@ export default function Landing() {
   return (
     <>
       <Toaster />
-      <main className="landing-page pb-50 h-screen">
+      <main className="landing-page pb-50 h-screen scroll-smooth">
         {/* background image parallax */}
         <div className="relative w-screen h-screen overflow-hidden">
           <ParallaxProvider>
@@ -360,10 +360,14 @@ export default function Landing() {
       </section>
 
       <footer className="landing-footer">
-        <div>
-          <div className="landing-footer__title">ASCENSION</div>
+        <div className="landing-footer__content">
+          <div className="flex flex-row gap-2 place-items-center">
+            <img src="/illustrations/squid_blue.svg" alt="" width="35" className="landing-footer__squid" />
+            <div className="landing-footer__title">ASCENSION</div>
+          </div>
           <div className="landing-footer__subtitle">
-            Made with ❤️ by hackclubbers like you
+            Made with ❤︎ for teenagers, by teenagers
+            <br /> <p className="text-[var(--color-purple-dark)]"><a href="https://hackclub.com" target="_blank" className="underline hover:decoration-wavy">Hack Club</a> is a 501(c)(3) nonprofit and network of 60k+ technical highschoolers. <a href="#" className="underline hover:decoration-wavy ">Join today!</a></p>
           </div>
         </div>
       </footer>

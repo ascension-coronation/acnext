@@ -194,12 +194,11 @@
   justify-content: center;
 }
 
-
 .htw-purple {
   background-image:
     linear-gradient(
       color-mix(in srgb, var(--color-purple-light) 70%, transparent),
-      color-mix(in srgb, var(--color-white-off) 60%, transparent)     
+      color-mix(in srgb, var(--color-white-off) 60%, transparent)
     ),
     url("/illustrations/royalTexture.png");
   background-repeat: no-repeat, repeat;
@@ -210,7 +209,7 @@
   background-image:
     linear-gradient(
       color-mix(in srgb, var(--color-blue-pale) 70%, transparent),
-      color-mix(in srgb, var(--color-white-off) 60%, transparent)     
+      color-mix(in srgb, var(--color-white-off) 60%, transparent)
     ),
     url("/illustrations/royalTexture.png");
   background-repeat: no-repeat, repeat;
@@ -221,7 +220,7 @@
   background-image:
     linear-gradient(
       color-mix(in srgb, var(--color-yellow) 70%, transparent),
-      color-mix(in srgb, var(--color-white-off) 60%, transparent)     
+      color-mix(in srgb, var(--color-white-off) 60%, transparent)
     ),
     url("/illustrations/royalTexture.png");
   background-repeat: no-repeat, repeat;
@@ -273,12 +272,13 @@
   margin: 1.5rem 0.5rem 0.5rem;
   color: var(--color-purple-dark);
   font-size: 24px;
+  text-wrap: pretty;
 }
 
 /* ── FAQ ───────────────────────────────────────────── */
 
 .faq-wrapper {
-  padding: 4rem 1.5rem 3rem;
+  padding: 4rem 1.5rem 4rem;
   background-color: #fbfaf4;
   background-size: cover;
   background-position: center;
@@ -367,10 +367,17 @@
 
 .landing-footer {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  text-align: center;
   align-items: center;
   padding: 1.75rem 2rem;
-  background-color: #6379a5;
+  box-shadow: 0px -12px 32px var(--color-blue-pale);
+  background-image:
+    linear-gradient(
+      color-mix(in srgb, var(--color-blue-pale) 70%, transparent),
+      color-mix(in srgb, var(--color-purple) 60%, transparent)
+    ),
+    url("/illustrations/royalTexture.png");
 }
 
 .landing-footer__icons {
@@ -388,18 +395,33 @@
   color: oklch(0.9695 0.0149 94.2);
 }
 
+.landing-footer__content {
+  place-items: center;
+  max-width: 65%;
+  text-wrap: pretty;
+}
+
 .landing-footer__title {
-  color: oklch(0.9695 0.0149 94.2);
+  color: var(--color-purple-dark);
   font-family: "PP Editorial New", serif;
-  font-style: italic;
   font-size: 2.5rem;
   font-weight: 400;
   line-height: 1;
 }
 
 .landing-footer__subtitle {
-  color: oklch(0.9695 0.0149 94.2 / 0.7);
+  color: var(--color-navy);
   font-family: "PP Editorial New", serif;
   font-size: 1.1rem;
-  margin-top: 0.25rem;
+  margin-top: 0.5rem;  
+}
+
+.landing-footer__squid {
+  transition-duration: 500ms;
+  animation: squid-hover 3s ease-in-out infinite alternate;  
+}
+
+.landing-footer__squid:hover {
+    transform: scale(1.05, 1.05);
+    animation: none;
 }

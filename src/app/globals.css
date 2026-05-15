@@ -72,3 +72,17 @@
     @apply bg-background text-foreground antialiased;
   }
 }
+
+@keyframes squid-hover {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(5px);
+  }
+
+  100% {
+    transform: translateY(-2px);
+  }
+}
