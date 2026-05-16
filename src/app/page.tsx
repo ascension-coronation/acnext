@@ -354,7 +354,7 @@ export default function Landing() {
           </div>
         </div>
         <p className="faq-help-text">
-          Still confused? Ask in the #ascension channel on slack and we can help
+          Still confused? Ask in the <a href="https://hackclub.enterprise.slack.com/archives/C0ADX7R2MHB" className="channel-link">#ascension</a> channel on Slack and we'll help
           you out!
         </p>
       </section>

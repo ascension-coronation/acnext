@@ -312,7 +312,7 @@
   background: transparent;
   color: oklch(0.4222 0.0756 262.54);
   font-family: "PP Editorial New", serif;
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   font-weight: 400;
   text-align: left;
   cursor: pointer;
@@ -350,16 +350,33 @@
   padding: 0 0.5rem 0.75rem;
   color: oklch(0.4222 0.0756 262.54 / 0.85);
   font-family: "PP Editorial New", serif;
-  font-size: 1rem;
+  font-size: 1.15rem;
   line-height: 1.5;
 }
 
 .faq-help-text {
   text-align: center;
-  margin-top: 2rem;
+  justify-self: center;
+  width: 75%;
+  margin-top: 4rem;
   color: oklch(0.4222 0.0756 262.54);
   font-family: "PP Editorial New", serif;
   font-size: 1.1rem;
+}
+
+.channel-link {
+  background-color: color-mix(in srgb, var(--color-blue-pale) 50%, transparent);
+  padding: 0.15rem 0.25rem;
+  margin: 0.15rem;
+  border-radius: 4px;
+  text-decoration: underline;
+  transition-duration: 150ms;
+}
+
+.channel-link:hover {
+  text-decoration: underline wavy;
+  background-color: color-mix(in srgb, var(--color-blue-pale) 75%, transparent);
+  margin: 0.2rem;
 }
 
 /* ── Footer ────────────────────────────────────────── */
