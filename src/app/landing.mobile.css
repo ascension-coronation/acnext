@@ -66,8 +66,16 @@
     right: 1.81rem;
   }
 
+  .how-this-works-image {
+    width: 20rem;
+  }
+
+  .how-this-works-caption {
+    font-size: 24px;
+  }
+
   .how-this-works-item {
-      width: 100%;
+    width: 100%;
   }
 
   .faq-columns {

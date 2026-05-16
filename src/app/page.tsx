@@ -19,13 +19,13 @@ const howThisWorksItems = [
     id: 1,
     title: "sign up",
     caption: "Sign up with email, and also sign up for Hack Club Slack to join our awesome community.",
-    src: "/illustrations/squid.png",
+    src: "/illustrations/squid_signup.png",
   },
   {
     id: 2,
     title: "design/draw!",
     caption: "Think of your project... try illustration? 3D modeling? wireframes? Learn to make some cool art for your project!",
-    src: "/illustrations/squid.png",
+    src: "/illustrations/squid_draw.png",
   },
   {
     id: 3,
@@ -354,7 +354,7 @@ export default function Landing() {
           </div>
         </div>
         <p className="faq-help-text">
-          Still confused? Ask in the <a href="https://hackclub.enterprise.slack.com/archives/C0ADX7R2MHB" className="channel-link">#ascension</a> channel on Slack and we'll help
+          Still confused? Ask in the <a href="https://hackclub.enterprise.slack.com/archives/C0ADX7R2MHB" className="channel-link">#ascension</a> channel on Slack and we&apos;ll help
           you out!
         </p>
       </section>
