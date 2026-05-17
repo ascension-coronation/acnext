@@ -13,7 +13,7 @@ export default function Team() {
       name: "kat wang",
       details: "15, canada",
       caption:
-        "frontend webdev/javascript enthusiast, artist, beginner gamedev :0 DM anytime for help!",
+        "frontend webdev + javascript enthusiast + artist! DM anytime for help!",
       slack_display: "@kook",
       slack_link: "",
       picture: "",
@@ -30,7 +30,9 @@ export default function Team() {
     {
       id: 3,
       name: "joy su",
+      details: "18, NC, USA",
       slack_display: "@Joy Su",
+      caption: "joyful",
       slack_link: "",
       picture: "",
     },

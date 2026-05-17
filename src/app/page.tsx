@@ -32,28 +32,28 @@ const howThisWorksItems = [
   {
     id: 3,
     title: "code it up",
-    caption: "type tpype type... vscode.. some insightful words",
-    src: "/illustrations/squid.png",
+    caption: "Turn your ideas into code! Use whatever frameworks, languages, and tools you want.",
+    src: "/illustrations/squid_code.png",
   },
   {
     id: 4,
     title: "track your time",
     caption:
       "You need to track time to get prizes. Coding? Setup Hackatime! (link) Drawing? Use Lapse. (link)",
-    src: "/illustrations/squid.png",
+    src: "/illustrations/squid_time.png",
   },
   {
     id: 5,
     title: "publish your project!",
     caption:
       "Let anyone on the internet see your beautiful creation... (with Vercel, GitHub Pages, itch.io, etc!)",
-    src: "/illustrations/squid.png",
+    src: "/illustrations/squid_publish.png",
   },
   {
     id: 6,
     title: "SUBMIT (for prizes!)",
-    caption: "yay yay yay get a wonderful prize for your efforts",
-    src: "/illustrations/squid.png",
+    caption: "Yay yay yay get a wonderful prize for your efforts",
+    src: "/illustrations/squid_submit.png",
   },
 ];
 
