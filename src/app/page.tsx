@@ -59,33 +59,50 @@ const howThisWorksItems = [
 
 const faqItems1 = [
   {
-    question: "Will there be any guides or workshops?",
+    question: "What is Ascension?",
     answer:
-      "Yep! Guides for ________ can be found on this site, and stay tuned for some workshops in the slack!",
+      "Ascension is a program promoting creators to make art for their coding projects! Learn to draw, make creative projects, and get coins that you can spend in the shop for prizes (link to prizes section).",
   },
   {
-    question: "Do I have to use a specific library/language?",
+    question: "Am I eligible to participate?",
     answer:
-      "Nope! You can use any framework and any libraries that you'd like.",
+      "Anyone aged 13-18 can participate! You will need to verify your identity before being able to purchase items in the shop.",
   },
   {
-    question: "Can you add x to the shop?",
-    answer: "Ask in #ascension in slack!",
+    question: "Is this legit?",
+    answer: "Yes! Ascension is a Hack Club program. Hack Club is a 501(c)(3) nonprofit that's organized many events for teenagers around the world, whether that be a hackathon on an island, (other HC event), (other HC event). We're backed by GitHub, AMD, and more; you can learn more on Hack Club's website. (link to hackclub.com)",
+  },
+  {
+    question: "How much does it cost?",
+    answer: "Participating in Ascension is completely free!",
+  },
+  {
+    question: "How do I earn coins?",
+    answer:
+      "Submit your projects and wait for them to be reviewed by someone on our team. Once your project is approved, you'll be rewarded coins based on the amount of hours you spent on it.",
   },
 ];
 
 const faqItems2 = [
   {
-    question: "Can I double dip?",
-    answer: "Nope, sorry :p",
+    question: "What do I use to make my projects?",
+    answer: "You can use whatever coding and art programs you want. If you don't know where to start, check out our Quickstart Guide and tutorials!",
   },
   {
-    question: "idk",
-    answer: "sfdakl;auioahdsouiphdsfagpiofdgoiadfvp[oksosdfgokfdgs].",
+    question: "Can I use AI?",
+    answer: "AI is not allowed at all for art. If you use AI to create the art (music, character sprites, website backgrounds, game dialogue, etc.) for your project, your project will be rejected. If you're using AI to help you debug, speed up your workflow, or learn something about coding, make sure you can understand the AI code. When you're done your project, you will be required to write about if/how you used AI.",
   },
   {
-    question: "Does my project have to be open source?",
-    answer: "Yep! It needs to be open source & easily usable by anybody.",
+    question: "What if I don't know how to draw... or code... or build projects? Can I still participate??",
+    answer: "Ascension is for creators of all skill levels! We're working on tutorials to follow if it's your first time, and you can always ask for help in #ascension-help or DM our team. (link to team) No worries if you're never done this before!",
+  },
+  {
+    question: "Who is running this?",
+    answer: "A group of ~6 teenagers from around the world! :) (link to team)",
+  },
+  {
+    question: "How do I sign up?",
+    answer: "Enter your email at the top of the page!! (link to top)",
   },
 ];
 
