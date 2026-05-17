@@ -1,4 +1,8 @@
 import "./team.css";
+
+import "./team.desktop.css";
+import "./team.mobile.css";
+
 import { Footer } from "../page";
 import Link from 'next/link';
 
