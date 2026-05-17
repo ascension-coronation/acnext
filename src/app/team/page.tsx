@@ -15,16 +15,16 @@ export default function Team() {
       caption:
         "frontend webdev + javascript enthusiast + artist! DM anytime for help!",
       slack_display: "@kook",
-      slack_link: "",
+      slack_link: "https://hackclub.enterprise.slack.com/team/U08H34LLQQJ",
       picture: "",
     },
     {
       id: 2,
       name: "erin nguyen",
       details: "16, canada",
-      caption: "reviewer/fufillment",
+      caption: "reviewer/fufillment: LISTEN TO STICKER (NCT 127)!!",
       slack_display: "@Erook",
-      slack_link: "",
+      slack_link: "https://hackclub.enterprise.slack.com/team/U081RDTKN5D",
       picture: "",
     },
     {
@@ -33,7 +33,7 @@ export default function Team() {
       details: "18, NC, USA",
       slack_display: "@Joy Su",
       caption: "joyful",
-      slack_link: "",
+      slack_link: "https://hackclub.enterprise.slack.com/team/U09G78T3MM2",
       picture: "",
     },
     {
@@ -41,8 +41,8 @@ export default function Team() {
       name: "kaylee dinh",
       details: "17, CA, USA",
       caption: "",
-      slack_display: "",
-      slack_link: "",
+      slack_display: "@Kaylee",
+      slack_link: "https://hackclub.enterprise.slack.com/team/U08QMC72ZST",
       picture: "",
     },
     {
@@ -50,8 +50,8 @@ export default function Team() {
       name: "grass",
       details: "grass, everywhere",
       caption: "",
-      slack_display: "",
-      slack_link: "",
+      slack_display: "@grass",
+      slack_link: "https://hackclub.enterprise.slack.com/team/U078WRWQPGF",
       picture: "",
     },
     {
@@ -59,8 +59,8 @@ export default function Team() {
       name: "bryan tang",
       details: "15, canada",
       caption: "artist and blenderer???",
-      slack_display: "",
-      slack_link: "",
+      slack_display: "@Bryan T",
+      slack_link: "https://hackclub.enterprise.slack.com/team/U081REMDML7",
       picture: "",
     },
   ];
@@ -103,7 +103,9 @@ export default function Team() {
                 <div className="flex flex-row gap-2 place-items-center text-center">
                   <h3 className="teammember-details">{member.details}</h3>
                   <h3 className="text-[var(--color-navy)]">•</h3>
-                  <h3 className="teammember-slack">{member.slack_display}</h3>
+                  <a href={member.slack_link} target="_blank">
+                    <h3 className="teammember-slack">{member.slack_display}</h3>
+                  </a>
                 </div>
                 <hr className="line"></hr>
                 <p className="teammember-caption">{member.caption}</p>
