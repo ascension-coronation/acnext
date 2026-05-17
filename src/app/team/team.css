@@ -1,0 +1,191 @@
+@keyframes slide {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -100vw -100vh;
+  }
+}
+
+@keyframes squid-slide {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(5px);
+    }
+}
+
+.page-wrapper {
+    overflow: hidden;
+    background-color: color-mix(in srgb, var(--color-blue-pale) 50%, transparent);
+}
+
+/* back button section */
+.back-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    padding-top: 4rem;
+    padding-bottom: -4rem;
+    align-self: flex-start;
+    transition-duration: 300ms;    
+}
+
+.back-squid {
+    width: 25px;
+    height: 25px;
+    transform: rotate(-90deg);
+}
+
+.back-text {
+    font-family: "PP Editorial New", serif;
+    color: var(--color-purple-dark);
+}
+
+.back-wrapper:hover {
+    scale: 1.05;
+    color: var(--color-purple-dark);
+    text-decoration: underline wavy;    
+    animation: squid-slide 0.5s ease-in-out infinite alternate;
+}
+
+/* team section */
+
+.team-wrapper {
+  padding: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  background: repeat-x repeat-y;
+  background-size: cover repeat;
+  background-image:
+    linear-gradient(
+      color-mix(in srgb, #ede1f7 90%, transparent),
+      color-mix(in srgb, var(--color-white-off) 80%, transparent),
+        color-mix(in srgb, #ede1f7 90%, transparent)
+    ),
+    url("/illustrations/royal_pattern_sparse.png");
+  background-blend-mode: normal, soft-light;
+  animation: slide 100s linear infinite;
+}
+
+.team-headline {
+  margin: 0 0 -3rem 0;
+  color: var(--color-navy);
+  text-align: center;
+  font-family: "PP Editorial New", serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 36px;
+  transition-duration: 300ms;
+}
+
+.teammembers-wrapper {
+  padding: 4rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.teammember-box {
+  border: 2px solid var(--color-navy);
+  padding: 1rem;
+  border-radius: 8px;
+  display: flex;
+  gap: 1.5rem;
+  box-shadow: 0px 4px 0px var(--color-navy);
+  transition-duration: 300ms;
+}
+
+.teammember-box:hover {
+    padding: 1rem 1.5rem;
+    scale: 1.05 1.05;
+    box-shadow: 0px 2px 0px var(--color-navy);
+}
+
+.teammember-pic {
+  justify-self: center;
+}
+
+.teammember-name {
+  font-family: "PP Editorial New", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  color: color-mix(in srgb, var(--color-navy) 65%, var(--color-purple-dark));
+}
+
+.teammember-details {
+  text-wrap: none;
+  font-family: "PP Editorial New", serif;
+  font-style: normal;
+  font-weight: 400;
+  color: var(--color-purple-dark);
+}
+
+.teammember-slack {
+  font-family: "PP Editorial New", serif;
+  font-style: italic;
+  font-weight: 400;
+  color: color-mix(in srgb, var(--color-navy) 75%, transparent);
+  background-color: color-mix(in srgb, var(--color-blue-pale) 50%, transparent);
+  padding: 1px 4px;
+  border-radius: 4px;
+  transition-duration: 150ms;
+}
+
+.teammember-slack:hover {
+  background-color: color-mix(in srgb, var(--color-blue-pale) 90%, transparent);
+  padding: 1px 6px;
+}
+
+.teammember-caption {
+  font-family: "PP Editorial New", serif;
+  font-style: normal;
+  font-weight: 400;
+  color: var(--color-navy);
+}
+
+.line {
+    margin: 0.5rem;
+    border: 1px solid color-mix(in srgb, var(--color-navy) 40%, transparent);
+}
+
+.box-purple {
+  background-image:
+    linear-gradient(
+      color-mix(in srgb, #ebf5f4 70%, transparent),
+      color-mix(in srgb, var(--color-white-off) 60%, transparent)
+    ),
+    url("/illustrations/royalTexture.png");
+  background-repeat: no-repeat, repeat;
+  background-position: center, center;
+  background-blend-mode: normal, soft-light;
+}
+.box-blue {
+  background-image:
+    linear-gradient(
+      color-mix(in srgb, var(--color-blue-pale) 70%, transparent),
+      color-mix(in srgb, var(--color-white-off) 60%, transparent)
+    ),
+    url("/illustrations/royalTexture.png");
+  background-repeat: no-repeat, repeat;
+  background-position: center, center;
+  background-blend-mode: normal, soft-light;
+}
+.box-yellow {
+  background-image:
+    linear-gradient(
+      color-mix(in srgb, var(--color-yellow) 70%, transparent),
+      color-mix(in srgb, var(--color-white-off) 60%, transparent)
+    ),
+    url("/illustrations/royalTexture.png");
+  background-repeat: no-repeat, repeat;
+  background-position: center, center;
+  background-blend-mode: normal, soft-light;
+}

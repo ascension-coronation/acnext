@@ -18,13 +18,15 @@ const howThisWorksItems = [
   {
     id: 1,
     title: "sign up",
-    caption: "Sign up with email, and also sign up for Hack Club Slack to join our awesome community.",
+    caption:
+      "Sign up with email, and also sign up for Hack Club Slack to join our awesome community.",
     src: "/illustrations/squid_signup.png",
   },
   {
     id: 2,
     title: "design/draw!",
-    caption: "Think of your project... try illustration? 3D modeling? wireframes? Learn to make some cool art for your project!",
+    caption:
+      "Think of your project... try illustration? 3D modeling? wireframes? Learn to make some cool art for your project!",
     src: "/illustrations/squid_draw.png",
   },
   {
@@ -36,14 +38,16 @@ const howThisWorksItems = [
   {
     id: 4,
     title: "track your time",
-    caption: "You need to track time to get prizes. Coding? Setup Hackatime! (link) Drawing? Use Lapse. (link)",
+    caption:
+      "You need to track time to get prizes. Coding? Setup Hackatime! (link) Drawing? Use Lapse. (link)",
     src: "/illustrations/squid.png",
   },
   {
     id: 5,
     title: "publish your project!",
-    caption: "Let anyone on the internet see your beautiful creation... (with Vercel, GitHub Pages, itch.io, etc!)", 
-    src: "/illustrations/squid.png", 
+    caption:
+      "Let anyone on the internet see your beautiful creation... (with Vercel, GitHub Pages, itch.io, etc!)",
+    src: "/illustrations/squid.png",
   },
   {
     id: 6,
@@ -97,17 +101,19 @@ function HowThisWorksItem({
   src: string;
 }) {
   return (
-    <div className={`how-this-works-item how-this-works-item-noise ${
-      [
-        "htw-blue",
-        "htw-purple",        
-        "htw-yellow",
-        "htw-blue",
-        "htw-yellow",        
-        "htw-blue",
-        "htw-purple",      
-      ][Number(id)]
-    }`}>
+    <div
+      className={`how-this-works-item how-this-works-item-noise ${
+        [
+          "htw-blue",
+          "htw-purple",
+          "htw-yellow",
+          "htw-blue",
+          "htw-yellow",
+          "htw-blue",
+          "htw-purple",
+        ][Number(id)]
+      }`}
+    >
       <h3 className="how-this-works-title">
         {id}. {title}
       </h3>
@@ -354,23 +360,61 @@ export default function Landing() {
           </div>
         </div>
         <p className="faq-help-text">
-          Still confused? Ask in the <a href="https://hackclub.enterprise.slack.com/archives/C0ADX7R2MHB" className="channel-link">#ascension</a> channel on Slack and we&apos;ll help
-          you out!
+          Still confused? Ask in the{" "}
+          <a
+            href="https://hackclub.enterprise.slack.com/archives/C0ADX7R2MHB"
+            className="channel-link"
+          >
+            #ascension
+          </a>{" "}
+          channel on Slack and we&apos;ll help you out, or contact someone on
+          the{" "}
+          <a href="/team" className="underline hover:decoration-wavy">
+            team!
+          </a>
         </p>
       </section>
 
-      <footer className="landing-footer">
-        <div className="landing-footer__content">
-          <div className="flex flex-row gap-2 place-items-center">
-            <img src="/illustrations/squid_blue.svg" alt="" width="35" className="landing-footer__squid" />
-            <div className="landing-footer__title">ASCENSION</div>
-          </div>
-          <div className="landing-footer__subtitle">
-            Made with ❤︎ for teenagers, by teenagers
-            <br /> <p className="text-[var(--color-purple-dark)]"><a href="https://hackclub.com" target="_blank" className="underline hover:decoration-wavy">Hack Club</a> is a 501(c)(3) nonprofit and network of 60k+ technical highschoolers. <a href="#" className="underline hover:decoration-wavy ">Join today!</a></p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </>
+  );
+}
+
+export function Footer() {
+  return (
+    <footer className="landing-footer">
+      <div className="landing-footer__content">
+        <div className="flex flex-row gap-2 place-items-center">
+          <img
+            src="/illustrations/squid_blue.svg"
+            alt=""
+            width="35"
+            className="landing-footer__squid"
+          />
+          <div className="landing-footer__title">ASCENSION</div>
+        </div>
+        <div className="landing-footer__subtitle">
+          Made with ❤︎ for teenagers, by{" "}
+          <a href="/team" className="underline hover:decoration-wavy">
+            teenagers
+          </a>
+          <br />{" "}
+          <p className="text-[var(--color-purple-dark)]">
+            <a
+              href="https://hackclub.com"
+              target="_blank"
+              className="underline hover:decoration-wavy"
+            >
+              Hack Club
+            </a>{" "}
+            is a 501(c)(3) nonprofit and network of 60k+ technical
+            highschoolers.{" "}
+            <a href="#" className="underline hover:decoration-wavy ">
+              Join today!
+            </a>
+          </p>
+        </div>
+      </div>
+    </footer>
   );
 }

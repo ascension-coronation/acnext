@@ -86,3 +86,13 @@
     transform: translateY(-2px);
   }
 }
+
+:root {
+  --color-purple: #928ddf;
+  --color-purple-light: #d9cee9;
+  --color-blue-pale: #c2e8f3;
+  --color-white-off: #f8f5e9;
+  --color-yellow: #f9eabf;
+  --color-navy: #0a3474;
+  --color-purple-dark: #585fa7;
+}
