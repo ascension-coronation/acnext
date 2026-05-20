@@ -52,6 +52,18 @@ const howThisWorksItems = [
   },
 ];
 
+const prizesItem = [
+  {
+    id : 1,
+    title : "prize 1",
+    caption: "hi"
+  }
+]
+
+const projectsItem = [
+
+]
+
 const faqItems1 = [
   {
     question: "Will there be any guides or workshops?",
@@ -67,12 +79,16 @@ const faqItems1 = [
     question: "Can you add x to the shop?",
     answer: "Ask in #ascension in slack!",
   },
+  {
+    question: "Is all of this legit?",
+    answer: "Yes! Ascension is under Hack Club, a 501(c) non-profit aimed at helping teens like you create personal projects!",
+  },
 ];
 
 const faqItems2 = [
   {
-    question: "Can I double dip?",
-    answer: "Nope, sorry :p",
+    question: "Can I double dip with other hack club programs?",
+    answer: "Nope, all projects submitted to ascension must not be submitted to any other program.",
   },
   {
     question: "idk",
@@ -81,6 +97,10 @@ const faqItems2 = [
   {
     question: "Does my project have to be open source?",
     answer: "Yep! It needs to be open source & easily usable by anybody.",
+  },
+  {
+    question: "Can I use AI?",
+    answer: "AI usage is allowed but only to a certain extent, refer to this doccument for further details: [insert doc]",
   },
 ];
 
@@ -340,6 +360,9 @@ export default function Landing() {
 
       <section className = "prize-wrapper">
         <h2 className = "section-title italic"> Prizes</h2>
+        <div className = "prizes row">
+
+        </div>
       </section>
 
       <section className="faq-wrapper">

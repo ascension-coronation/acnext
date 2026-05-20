@@ -274,6 +274,15 @@
   font-size: 24px;
 }
 
+/*   ── Prizes scroll ───────────────────────────────────────────── */
+
+.prize-wrapper{
+  background-color: #fbfaf4;
+  background-size: cover;
+  background-position: center;
+    padding: 4rem 1.5rem 3rem;
+}
+
 /* ── FAQ ───────────────────────────────────────────── */
 
 .faq-wrapper {
