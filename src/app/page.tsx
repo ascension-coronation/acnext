@@ -39,7 +39,7 @@ const howThisWorksItems = [
     id: 4,
     title: "track your time",
     caption:
-      "You need to track time to get prizes. Coding? Setup Hackatime! (link) Drawing? Use Lapse. (link)",
+      "You need to track time to get prizes. Coding? Setup Hackatime! Drawing? Use Lapse.",
     src: "/illustrations/squid_time.png",
   },
   {
@@ -61,7 +61,7 @@ const faqItems1 = [
   {
     question: "What is Ascension?",
     answer:
-      "Ascension is a program promoting creators to make art for their coding projects! Learn to draw, make creative projects, and get coins that you can spend in the shop for prizes (link to prizes section).",
+      "Ascension is a program promoting creators to make art for their coding projects! Learn to draw, make creative projects, and get coins that you can spend in the shop for prizes.",
   },
   {
     question: "Am I eligible to participate?",
@@ -70,7 +70,7 @@ const faqItems1 = [
   },
   {
     question: "Is this legit?",
-    answer: "Yes! Ascension is a Hack Club program. Hack Club is a 501(c)(3) nonprofit that's organized many events for teenagers around the world, whether that be a hackathon on an island, (other HC event), (other HC event). We're backed by GitHub, AMD, and more; you can learn more on Hack Club's website. (link to hackclub.com)",
+    answer: "Yes! Ascension is a Hack Club program. Hack Club is NOT actually about hacking, It's a 501(c)(3) nonprofit that's organized many events for teenagers around the world, whether that be a gaming pop-up cafe in China, a hackathon on an island, or a scavenger hunt around New York. We're backed by tech companies like GitHub, AMD, and more; you can learn more on hackclub.com.",
   },
   {
     question: "How much does it cost?",
@@ -94,15 +94,15 @@ const faqItems2 = [
   },
   {
     question: "What if I don't know how to draw... or code... or build projects? Can I still participate??",
-    answer: "Ascension is for creators of all skill levels! We're working on tutorials to follow if it's your first time, and you can always ask for help in #ascension-help or DM our team. (link to team) No worries if you're never done this before!",
+    answer: "Ascension is for creators of all skill levels! We're working on tutorials to follow if it's your first time, and you can always ask for help in #ascension-help or DM our team. No worries if you're never done this before!",
   },
   {
     question: "Who is running this?",
-    answer: "A group of ~6 teenagers from around the world! :) (link to team)",
+    answer: "A group of ~6 teenagers from around the world! :)",
   },
   {
     question: "How do I sign up?",
-    answer: "Enter your email at the top of the page!! (link to top)",
+    answer: "Enter your email at the top of the page!!",
   },
 ];
 
