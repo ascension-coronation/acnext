@@ -35,7 +35,7 @@ export default function Team() {
       caption: "joyful",
       slack_link: "https://hackclub.enterprise.slack.com/team/U09G78T3MM2",
       picture: "",
-    },
+    },  
     {
       id: 4,
       name: "kaylee dinh",
@@ -63,6 +63,16 @@ export default function Team() {
       slack_link: "https://hackclub.enterprise.slack.com/team/U081REMDML7",
       picture: "",
     },
+    {
+      id: 7,
+      name: "tongyu",
+      details: "19, singapore",
+      caption:
+        "resident gap year",
+      slack_display: "@tongyu",
+      slack_link: "https://hackclub.enterprise.slack.com/team/U08H34LLQQJ",
+      picture: "",
+    },      
   ];
 
   return (
@@ -86,11 +96,12 @@ export default function Team() {
                   "box-yellow",
                   "box-blue",
                   "box-purple",
+                  "box-blue",
                 ][Number(member.id)]
               }`}
             >
               {/* picture */}
-              <div className="flex outline place-items-center">
+              <div className="flex outline flex-row items-center">
                 <img
                   src={member.picture}
                   alt={member.name}
@@ -100,7 +111,7 @@ export default function Team() {
               {/* details */}
               <div>
                 <h2 className="teammember-name">{member.name}</h2>
-                <div className="flex flex-row gap-2 place-items-center text-center">
+                <div className="flex flex-row gap-2 items-center text-center">
                   <h3 className="teammember-details">{member.details}</h3>
                   <h3 className="text-[var(--color-navy)]">•</h3>
                   <a href={member.slack_link} target="_blank">

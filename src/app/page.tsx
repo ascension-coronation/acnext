@@ -401,7 +401,7 @@ export function Footer() {
   return (
     <footer className="landing-footer">
       <div className="landing-footer__content">
-        <div className="flex flex-row gap-2 place-items-center">
+        <div className="flex flex-row gap-2 items-center">
           <img
             src="/illustrations/squid_blue.svg"
             alt=""

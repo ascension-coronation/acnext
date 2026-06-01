@@ -249,7 +249,8 @@
 .how-this-works-image {
   transition-duration: 200ms;
   max-width: 75%;
-  place-self: center;
+  justify-self: center;
+  align-self: center;
 }
 
 .how-this-works-image:hover {
@@ -401,7 +402,8 @@
 }
 
 .landing-footer__content {
-  place-items: center;
+  justify-items: center;
+  align-items: center;
   max-width: 65%;
   text-wrap: pretty;
 }
