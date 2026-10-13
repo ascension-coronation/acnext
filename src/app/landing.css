@@ -264,6 +264,87 @@
   text-wrap: pretty;
 }
 
+/*   ── Prizes scroll ───────────────────────────────────────────── */
+.pcaption{
+  font-family: "PP Editorial New", serif;
+  font-style: italic;
+  text-align: center;
+  margin-top: -2rem;
+  margin-bottom: 2rem;
+  font-size: larger;
+  color:  oklch(0.4222 0.0756 262.54);
+}
+.prizewrapper{
+  background-color: #fbfaf4;
+}
+.prizesrow {
+  display: flex;
+  align-items: center;
+  min-height: 26rem;
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+}
+
+.prizescontainer {
+  display: flex;
+  width: max-content;
+  animation: reactMarqueeLoop 20s linear infinite;
+  will-change: transform;
+}
+
+.prize-boxes {
+
+  flex-shrink: 0;
+  width: 28rem;       
+  min-height: 25rem;
+  margin-right: 1.5rem;
+  border-radius: 12px;
+  outline: 2px solid var(--color-navy);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3px;
+
+
+  h3 {
+    font-size: xx-large;
+    font-family: "PP Editorial New", serif;
+    margin-top: 2rem;
+    color: oklch(0.4222 0.0756 262.54);
+  }
+
+  p{
+    font-size: 18px;
+    font-family: "PP Editorial New", serif;
+    margin-top: 2rem;
+    color: oklch(0.4222 0.0756 262.54);
+  }
+
+  img {
+    max-height: 15rem;
+    max-width: 85%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.prizesrow:hover .prizescontainer {
+  animation-play-state: paused;
+}
+
+@keyframes reactMarqueeLoop {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .prizescontainer { animation: none; }
+}
+
+
+
 /* ── FAQ ───────────────────────────────────────────── */
 
 .faq-wrapper {
@@ -389,7 +470,7 @@
 .landing-footer__icons {
   display: flex;
   gap: 1rem;
-  align-items: center;
+  align-items: center;                                                                                    
 }
 
 .landing-footer__icon-link {
@@ -420,12 +501,8 @@
   color: var(--color-navy);
   font-family: "PP Editorial New", serif;
   font-size: 1.1rem;
-  margin-top: 0.5rem;  
-}
+  margin-top: 0.25rem;
 
-.landing-footer__squid {
-  transition-duration: 500ms;
-  animation: squid-hover 3s ease-in-out infinite alternate;  
 }
 
 .landing-footer__squid:hover {

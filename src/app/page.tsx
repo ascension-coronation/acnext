@@ -57,6 +57,43 @@ const howThisWorksItems = [
   },
 ];
 
+const prizesItem = [
+  {
+    id : 1,
+    title : "Drawing Tablet",
+    img: "/prizes/wacom.png" ,
+    caption: "Great budget art option :D"
+  }
+  ,{
+    id: 2,
+    title: "Ipad",
+    img : "/prizes/ipad.png",
+    caption: "to art, play games or do anything you want!"
+  },
+  {
+    id: 3,
+    title: "More",
+    img: "",
+    caption: "Join #ascension on hack club slack and you can suggest more prizes for us to put on the shop!"
+  },
+  {
+    id: 4,
+    title: "Digital Camera",
+    img: "/prizes/digicam.png",
+    caption: "Snap a photo with your friends"
+  },
+  {
+    id: 5,
+    title: "Figma pro",
+    img: "/prizes/figma.png",
+    caption: "Woah more than 3 shared designs??"
+  }
+]
+
+const projectsItem = [
+  
+]
+
 const faqItems1 = [
   {
     question: "What is Ascension?",
@@ -81,12 +118,16 @@ const faqItems1 = [
     answer:
       "Submit your projects and wait for them to be reviewed by someone on our team. Once your project is approved, you'll be rewarded coins based on the amount of hours you spent on it.",
   },
+  {
+    question: "Is all of this legit?",
+    answer: "Yes! Ascension is under Hack Club, a 501(c) non-profit aimed at helping teens like you create personal projects!",
+  },
 ];
 
 const faqItems2 = [
   {
-    question: "What do I use to make my projects?",
-    answer: "You can use whatever coding and art programs you want. If you don't know where to start, check out our Quickstart Guide and tutorials!",
+    question: "Can I double dip with other hack club programs?",
+    answer: "Nope, all projects submitted to ascension must not be submitted to any other program.",
   },
   {
     question: "Can I use AI?",
@@ -103,6 +144,10 @@ const faqItems2 = [
   {
     question: "How do I sign up?",
     answer: "Enter your email at the top of the page!!",
+  },
+  {
+    question: "Can I use AI?",
+    answer: "AI usage is allowed but only to a certain extent, refer to this doccument for further details: [insert doc]",
   },
 ];
 
@@ -136,6 +181,31 @@ function HowThisWorksItem({
       </h3>
       <img src={src} alt="" className="how-this-works-image" />
       <p className="how-this-works-caption">{caption}</p>
+    </div>
+  );
+}
+
+function Prizeitems({ 
+  id, 
+  name, 
+  img, 
+  isDuplicate,
+  caption 
+}: 
+  { 
+    id: string; 
+    name: string; 
+    img: string; 
+    caption: string;
+    isDuplicate?: boolean }) {
+  return (
+    <div 
+      className={`prize-boxes htw-yellow`}
+      aria-hidden={isDuplicate ? "true" : undefined}
+    >
+      <h3 className="prizes-title">{name}</h3>
+      <img src={img} alt="" className="prize-img" />
+      <p className="prize-caption">{caption}</p>
     </div>
   );
 }
@@ -180,6 +250,7 @@ function AccordionItem({
 export default function Landing() {
   const [processing, setProcessing] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const infinitePrizes = [...prizesItem, ...prizesItem];
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -362,6 +433,29 @@ export default function Landing() {
         </div>
       </section>
 
+<section className="prizewrapper">
+        <h2 className="section-title italic">Prizes</h2>
+        <p className = "pcaption">Here's a look into some of the stuff you can get!</p>
+          <div className="prizesrow">
+            <div className = "prizescontainer">
+            {infinitePrizes.map((item, index) => {
+              const isDuplicate = index >= prizesItem.length;
+              return (
+                <Prizeitems
+                  key={`${item.id}-${index}`}
+                  id={String(item.id)}
+                  name={item.title}
+                  img={item.img}
+                  caption={item.caption}
+                  isDuplicate={isDuplicate}
+                />
+                
+              );
+              })}
+              </div>
+          </div>
+      </section>
+
       <section className="faq-wrapper">
         <h2 className="section-title italic">FAQ</h2>
         <div className="faq-columns">
@@ -435,3 +529,4 @@ export function Footer() {
     </footer>
   );
 }
+
