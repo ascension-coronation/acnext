@@ -55,13 +55,38 @@ const howThisWorksItems = [
 const prizesItem = [
   {
     id : 1,
-    title : "prize 1",
-    caption: "hi"
+    title : "Drawing Tablet",
+    img: "/prizes/wacom.png" ,
+    caption: "Great budget art option :D"
+  }
+  ,{
+    id: 2,
+    title: "Ipad",
+    img : "/prizes/ipad.png",
+    caption: "to art, play games or do anything you want!"
+  },
+  {
+    id: 3,
+    title: "More",
+    img: "",
+    caption: "Join #ascension on hack club slack and you can suggest more prizes for us to put on the shop!"
+  },
+  {
+    id: 4,
+    title: "Digital Camera",
+    img: "/prizes/digicam.png",
+    caption: "Snap a photo with your friends"
+  },
+  {
+    id: 5,
+    title: "Figma pro",
+    img: "/prizes/figma.png",
+    caption: "Woah more than 3 shared designs??"
   }
 ]
 
 const projectsItem = [
-
+  
 ]
 
 const faqItems1 = [
@@ -136,6 +161,31 @@ function HowThisWorksItem({
   );
 }
 
+function Prizeitems({ 
+  id, 
+  name, 
+  img, 
+  isDuplicate,
+  caption 
+}: 
+  { 
+    id: string; 
+    name: string; 
+    img: string; 
+    caption: string;
+    isDuplicate?: boolean }) {
+  return (
+    <div 
+      className={`prize-boxes htw-yellow`}
+      aria-hidden={isDuplicate ? "true" : undefined}
+    >
+      <h3 className="prizes-title">{name}</h3>
+      <img src={img} alt="" className="prize-img" />
+      <p className="prize-caption">{caption}</p>
+    </div>
+  );
+}
+
 function AccordionItem({
   question,
   answer,
@@ -176,6 +226,7 @@ function AccordionItem({
 export default function Landing() {
   const [processing, setProcessing] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const infinitePrizes = [...prizesItem, ...prizesItem];
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -358,11 +409,27 @@ export default function Landing() {
         </div>
       </section>
 
-      <section className = "prize-wrapper">
-        <h2 className = "section-title italic"> Prizes</h2>
-        <div className = "prizes row">
-
-        </div>
+<section className="prizewrapper">
+        <h2 className="section-title italic">Prizes</h2>
+        <p className = "pcaption">Here's a look into some of the stuff you can get!</p>
+          <div className="prizesrow">
+            <div className = "prizescontainer">
+            {infinitePrizes.map((item, index) => {
+              const isDuplicate = index >= prizesItem.length;
+              return (
+                <Prizeitems
+                  key={`${item.id}-${index}`}
+                  id={String(item.id)}
+                  name={item.title}
+                  img={item.img}
+                  caption={item.caption}
+                  isDuplicate={isDuplicate}
+                />
+                
+              );
+              })}
+              </div>
+          </div>
       </section>
 
       <section className="faq-wrapper">
@@ -396,3 +463,4 @@ export default function Landing() {
     </>
   );
 }
+
