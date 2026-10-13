@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import { SpinnerCustom } from "@/components/ui/spinner";
 
 import "./landing.css";
+
 import "./landing.desktop.css";
 import "./landing.mobile.css";
 
@@ -17,38 +18,42 @@ const howThisWorksItems = [
   {
     id: 1,
     title: "sign up",
-    caption: "sdfjdjfd",
-    src: "/illustrations/squid.png",
+    caption:
+      "Sign up with email, and also sign up for Hack Club Slack to join our awesome community.",
+    src: "/illustrations/squid_signup.png",
   },
   {
     id: 2,
     title: "design/draw!",
-    caption: "sdfjdjfd",
-    src: "/illustrations/squid.png",
+    caption:
+      "Think of your project... try illustration? 3D modeling? wireframes? Learn to make some cool art for your project!",
+    src: "/illustrations/squid_draw.png",
   },
   {
     id: 3,
     title: "code it up",
-    caption: "sdfjdjfd",
-    src: "/illustrations/squid.png",
+    caption: "Turn your ideas into code! Use whatever frameworks, languages, and tools you want.",
+    src: "/illustrations/squid_code.png",
   },
   {
     id: 4,
     title: "track your time",
-    caption: "sdfjdjfd",
-    src: "/illustrations/squid.png",
+    caption:
+      "You need to track time to get prizes. Coding? Setup Hackatime! Drawing? Use Lapse.",
+    src: "/illustrations/squid_time.png",
   },
   {
     id: 5,
     title: "publish your project!",
-    caption: "sdfjdjfd",
-    src: "/illustrations/squid.png",
+    caption:
+      "Let anyone on the internet see your beautiful creation... (with Vercel, GitHub Pages, itch.io, etc!)",
+    src: "/illustrations/squid_publish.png",
   },
   {
     id: 6,
     title: "SUBMIT (for prizes!)",
-    caption: "sdfjdjfd",
-    src: "/illustrations/squid.png",
+    caption: "Yay yay yay get a wonderful prize for your efforts",
+    src: "/illustrations/squid_submit.png",
   },
 ];
 
@@ -91,18 +96,27 @@ const projectsItem = [
 
 const faqItems1 = [
   {
-    question: "Will there be any guides or workshops?",
+    question: "What is Ascension?",
     answer:
-      "Yep! Guides for ________ can be found on this site, and stay tuned for some workshops in the slack!",
+      "Ascension is a program promoting creators to make art for their coding projects! Learn to draw, make creative projects, and get coins that you can spend in the shop for prizes.",
   },
   {
-    question: "Do I have to use a specific library/language?",
+    question: "Am I eligible to participate?",
     answer:
-      "Nope! You can use any framework and any libraries that you'd like.",
+      "Anyone aged 13-18 can participate! You will need to verify your identity before being able to purchase items in the shop.",
   },
   {
-    question: "Can you add x to the shop?",
-    answer: "Ask in #ascension in slack!",
+    question: "Is this legit?",
+    answer: "Yes! Ascension is a Hack Club program. Hack Club is NOT actually about hacking, It's a 501(c)(3) nonprofit that's organized many events for teenagers around the world, whether that be a gaming pop-up cafe in China, a hackathon on an island, or a scavenger hunt around New York. We're backed by tech companies like GitHub, AMD, and more; you can learn more on hackclub.com.",
+  },
+  {
+    question: "How much does it cost?",
+    answer: "Participating in Ascension is completely free!",
+  },
+  {
+    question: "How do I earn coins?",
+    answer:
+      "Submit your projects and wait for them to be reviewed by someone on our team. Once your project is approved, you'll be rewarded coins based on the amount of hours you spent on it.",
   },
   {
     question: "Is all of this legit?",
@@ -116,12 +130,20 @@ const faqItems2 = [
     answer: "Nope, all projects submitted to ascension must not be submitted to any other program.",
   },
   {
-    question: "idk",
-    answer: "sfdakl;auioahdsouiphdsfagpiofdgoiadfvp[oksosdfgokfdgs].",
+    question: "Can I use AI?",
+    answer: "AI is not allowed at all for art. If you use AI to create the art (music, character sprites, website backgrounds, game dialogue, etc.) for your project, your project will be rejected. If you're using AI to help you debug, speed up your workflow, or learn something about coding, make sure you can understand the AI code. When you're done your project, you will be required to write about if/how you used AI.",
   },
   {
-    question: "Does my project have to be open source?",
-    answer: "Yep! It needs to be open source & easily usable by anybody.",
+    question: "What if I don't know how to draw... or code... or build projects? Can I still participate??",
+    answer: "Ascension is for creators of all skill levels! We're working on tutorials to follow if it's your first time, and you can always ask for help in #ascension-help or DM our team. No worries if you're never done this before!",
+  },
+  {
+    question: "Who is running this?",
+    answer: "A group of ~6 teenagers from around the world! :)",
+  },
+  {
+    question: "How do I sign up?",
+    answer: "Enter your email at the top of the page!!",
   },
   {
     question: "Can I use AI?",
@@ -141,17 +163,19 @@ function HowThisWorksItem({
   src: string;
 }) {
   return (
-    <div className={`how-this-works-item how-this-works-item-noise ${
-      [
-        "htw-blue",
-        "htw-purple",        
-        "htw-yellow",
-        "htw-blue",
-        "htw-yellow",        
-        "htw-blue",
-        "htw-purple",      
-      ][Number(id)]
-    }`}>
+    <div
+      className={`how-this-works-item how-this-works-item-noise ${
+        [
+          "htw-blue",
+          "htw-purple",
+          "htw-yellow",
+          "htw-blue",
+          "htw-yellow",
+          "htw-blue",
+          "htw-purple",
+        ][Number(id)]
+      }`}
+    >
       <h3 className="how-this-works-title">
         {id}. {title}
       </h3>
@@ -274,7 +298,7 @@ export default function Landing() {
   return (
     <>
       <Toaster />
-      <main className="landing-page pb-50 h-screen">
+      <main className="landing-page pb-50 h-screen scroll-smooth">
         {/* background image parallax */}
         <div className="relative w-screen h-screen overflow-hidden">
           <ParallaxProvider>
@@ -447,20 +471,62 @@ export default function Landing() {
           </div>
         </div>
         <p className="faq-help-text">
-          Still confused? Ask in the #ascension channel on slack and we can help
-          you out!
+          Still confused? Ask in the{" "}
+          <a
+            href="https://hackclub.enterprise.slack.com/archives/C0ADX7R2MHB"
+            className="channel-link"
+          >
+            #ascension
+          </a>{" "}
+          channel on Slack and we&apos;ll help you out, or contact someone on
+          the{" "}
+          <a href="/team" className="underline hover:decoration-wavy">
+            team!
+          </a>
         </p>
       </section>
 
-      <footer className="landing-footer">
-        <div>
-          <div className="landing-footer__title">ASCENSION</div>
-          <div className="landing-footer__subtitle">
-            Made with ❤️ by hackclubbers like you
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </>
+  );
+}
+
+export function Footer() {
+  return (
+    <footer className="landing-footer">
+      <div className="landing-footer__content">
+        <div className="flex flex-row gap-2 items-center">
+          <img
+            src="/illustrations/squid_blue.svg"
+            alt=""
+            width="35"
+            className="landing-footer__squid"
+          />
+          <div className="landing-footer__title">ASCENSION</div>
+        </div>
+        <div className="landing-footer__subtitle">
+          Made with ❤︎ for teenagers, by{" "}
+          <a href="/team" className="underline hover:decoration-wavy">
+            teenagers
+          </a>
+          <br />{" "}
+          <p className="text-[var(--color-purple-dark)]">
+            <a
+              href="https://hackclub.com"
+              target="_blank"
+              className="underline hover:decoration-wavy"
+            >
+              Hack Club
+            </a>{" "}
+            is a 501(c)(3) nonprofit and network of 60k+ technical
+            highschoolers.{" "}
+            <a href="#" className="underline hover:decoration-wavy ">
+              Join today!
+            </a>
+          </p>
+        </div>
+      </div>
+    </footer>
   );
 }
 

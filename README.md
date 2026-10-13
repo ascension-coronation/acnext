@@ -1,3 +1,14 @@
+## Ascension landing page
+
+This is the landing page for Ascension, a Hack Club YSWS program that encourages teens to make art-focused technical projects & get prizes. You can RSVP now!
+
+It's built with Next.js. It will probably get merged with the rest of the platform later but whatever
+
+Check it out! [ascension.hackclub.com](ascension.hackclub.com)
+
+
+---
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started

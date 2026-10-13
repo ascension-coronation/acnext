@@ -52,4 +52,12 @@
     top: 3.13rem;
     right: 3.44rem;
   }
+
+  .how-this-works-item {
+      max-width: 20rem;
+  }
+
+  .how-this-works-caption {
+      font-size: 20px;
+  }
 }
